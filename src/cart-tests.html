@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pequenos</title>
+    <style>
+      body {
+        background-color: rgba(0, 50, 50, 1);
+        color: white
+      }
+      body a {
+        color: gold
+      }
+
+      .float-rigth textarea {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: currentColor;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: none;
+        border-left: 5px dashed;
+        padding-left: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float-rigth">
+      <textarea name="shop" id="shop" cols="60" rows="35" spellcheck="false">
+{
+  "products": [
+    {
+      "name": "tecladinho lindinho 2k20",
+      "price": 202000,
+      "description": "",
+      "id": "VS1K",
+      "imageLink": ""
+    },
+    {
+      "name": "chaleira",
+      "price": 10000,
+      "description": "",
+      "id": "1",
+      "imageLink": ""
+    },
+    {
+      "name": "chaleira",
+      "price": 2000,
+      "description": "",
+      "id": "F0FAD",
+      "imageLink": ""
+    }
+  ],
+  "paymentMethods": [
+    {
+      "onShipping": true,
+      "name": "cartão de credito",
+      "preposition": "por",
+      "network": "maestro",
+      "parcels": 10,
+      "tax": 1.07,
+      "tag": "InstallmentPaymentMethod"
+    }
+  ],
+  "name": "Loja de Teste",
+  "description": "Loja para testar coisas"
+}
+</textarea
+      >
+    </div>
+    <div class="">
+      <a href="" id="link">Link pro carrinho</a>
+    </div>
+    <pre id="cart"></pre>
+    <script src="./main.js"></script>
+  </body>
+</html>

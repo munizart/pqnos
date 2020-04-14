@@ -1,0 +1,14 @@
+{
+  "compileOnSave": true,
+  "include": [
+    "src", "test"
+  ],
+  "compilerOptions": {
+    "checkJs": true,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": false,
+    "noEmit": true,
+    "target": "es2020"
+  }
+}

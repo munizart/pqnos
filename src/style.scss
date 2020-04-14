@@ -1,0 +1,23 @@
+@mixin container {
+  margin: 0 1em;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.pqnos-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid;
+
+  .pqnos-header-content {
+    @include container();
+    h1 {
+      font-variant-caps: small-caps;
+    }
+  }
+}
