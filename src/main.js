@@ -1,7 +1,5 @@
-import Cart from './Cart'
 import { serialize } from './CartSerializer'
 import { checkout } from './checkout-methods/whatsapp'
-import { InstallmentPaymentMethod } from './PaymentMethod'
 import Product from './Product'
 import { Shop } from './Shop'
 
@@ -43,5 +41,3 @@ if (shop instanceof HTMLTextAreaElement) {
 
   onInputed()
 }
-
-window.InstallmentPaymentMethod = InstallmentPaymentMethod
