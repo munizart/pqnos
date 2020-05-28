@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    container_name: pqnos-core-app
+    build:
+      context: .
+    ports:
+      - "1357:1357"
+    environment:
+      GIT_REMOTE_FULL_URL: "${GIT_REMOTE_USER}:${GIT_REMOTE_PASS}@${GIT_REMOTE_URL}"
+      PORT: ${PORT}
