@@ -1,7 +1,3 @@
-declare namespace JSX {
-  export type Element = string
-}
-
 declare type SerializablePaymentMethod =
   | {
       tag: 'CashPaymentMethod'
@@ -34,5 +30,6 @@ declare interface SerializableShop {
   paymentMethods: SerializablePaymentMethod[]
   name: string
   description: string
-  metatags?: string[]
+  metatags?: string[],
+  whatsappNumber: string
 }
