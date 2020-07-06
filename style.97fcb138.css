@@ -1,7 +1,6 @@
 .container {
   position: relative;
   margin: 0 1em;
-  text-align: justify;
 }
 @media all and (min-width: 992px) {
   .container {
@@ -62,7 +61,6 @@ body {
 }
 .pqnos-header .pqnos-header-content {
   margin: 0 1em;
-  text-align: justify;
   color: #1f1d2e;
   font-family: "Montserrat";
   background-color: #f3548d;
@@ -76,7 +74,6 @@ body {
 
 .content {
   margin: 0 1em;
-  text-align: justify;
   padding-top: 3em;
 }
 @media all and (min-width: 992px) {

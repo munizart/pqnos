@@ -202,7 +202,7 @@ module.exports = reloadCSS;
 require("typeface-roboto");
 
 require("typeface-montserrat");
-},{"typeface-roboto":"../node_modules/typeface-roboto/index.css","typeface-montserrat":"../node_modules/typeface-montserrat/index.css"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"typeface-roboto":"../node_modules/typeface-roboto/index.css","typeface-montserrat":"../node_modules/typeface-montserrat/index.css"}],"../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -230,7 +230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45391" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41135" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -406,5 +406,4 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","load-fonts.js"], null)
-//# sourceMappingURL=/load-fonts.39f32682.js.map
+},{}]},{},["../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","load-fonts.js"], null)
