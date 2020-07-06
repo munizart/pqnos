@@ -8,15 +8,15 @@ export class Shop {
    * @param { Product[] } products
    * @param { PaymentMethod[] } paymentMethods
    * @param { string } description
-   * @param { string[] } [metatags]
+   * @param { { ddd: string, phone: string } } whatsappNumber
    */
-  constructor (name, products, paymentMethods, description, metatags) {
+  constructor (name, products, paymentMethods, description, whatsappNumber) {
     this.name = name
     this.cart = new Cart()
     this.products = products
     this.paymentMethods = paymentMethods
     this.description = description
-    this.metatags = metatags
+    this.whatsappNumber = whatsappNumber
   }
 
   /**
@@ -45,7 +45,7 @@ export class Shop {
       products,
       paymentMethods,
       serializableShop.description,
-      serializableShop.metatags
+      serializableShop.whatsappNumber
     )
   }
 }

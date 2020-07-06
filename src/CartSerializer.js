@@ -1,5 +1,5 @@
 import Cart from './Cart'
-import { formatCentsToBRLString, collapse } from './formatter'
+import { collapse } from './formatter'
 import { PaymentMethod } from './PaymentMethod'
 
 /**
@@ -7,24 +7,21 @@ import { PaymentMethod } from './PaymentMethod'
  * @param { PaymentMethod } paymentMethod
  */
 export const serialize = (cart, paymentMethod) => {
-  const productLines = Array.from(cart.addedProducts.entries())
+  const cartEntries = Array.from(cart.addedProducts.entries())
+  const biggestPID = Math.max(...cartEntries.map(([p]) => String(p.id).length))
+  const productLines = cartEntries
     .map(([p, q]) =>
-      '\t• '
+      '• '
         .concat(`${q}`)
-        .concat(' × (')
-        .concat(p.formatedPrice)
+        .concat('× (c. ')
+        .concat(`${p.id}`.padStart(biggestPID))
         .concat(') ')
         .concat(collapse(p.name, 20))
-        .concat(' (Cod. ')
-        .concat(`${p.id}`)
-        .concat(') :')
-        .concat(formatCentsToBRLString(p.price * q))
     )
     .join('\n')
 
   const paymentLines = paymentMethod.formatedPayment(cart.totalPrice)
   return 'Olá, segue meu pedido:\n'
     .concat(productLines)
-    .concat(`\nTotal da compra: ${cart.formatedTotal}`)
     .concat(`\n${paymentLines}`)
 }

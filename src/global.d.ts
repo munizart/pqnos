@@ -1,35 +1,54 @@
-declare type SerializablePaymentMethod =
-  | {
-      tag: 'CashPaymentMethod'
-    }
-  | {
-      tag: 'InstallmentPaymentMethod'
-      onShipping: boolean
-      name: string
-      preposition: 'em' | 'por'
-      network: string
-      parcels: number
-      tax: number
-    }
-  | {
-      onShipping: boolean
-      name: string
-      preposition: 'em' | 'por'
-    }
+import Cart from './Cart'
+import { Shop } from './Shop'
+declare global {
+  interface HomeProp {
+    goToCart: () => void
+  }
 
-declare interface SerializableProduct {
-  name: string
-  price: number
-  description: string
-  id: string
-  imageLink: string
-}
+  interface Window {
+    shop: Shop
+  }
 
-declare interface SerializableShop {
-  products: SerializableProduct[]
-  paymentMethods: SerializablePaymentMethod[]
-  name: string
-  description: string
-  metatags?: string[],
-  whatsappNumber: string
+  type SerializablePaymentMethod =
+    | {
+        tag: 'CashPaymentMethod'
+      }
+    | {
+        onShipping: boolean
+        name: string
+      }
+
+  interface SerializableProduct {
+    name: string
+    price: number
+    description: string
+    id: string
+    imageLink: string
+  }
+
+  interface SerializableShop {
+    products: SerializableProduct[]
+    paymentMethods: SerializablePaymentMethod[]
+    name: string
+    description: string
+    whatsappNumber: {
+      ddd: string
+      phone: string
+    }
+  }
+
+  interface AppState {
+    page: string
+    cart: Cart
+  }
+
+  type AppAction =
+    | {
+        type: 'UpdatePage'
+        payload: string
+      }
+    | {
+        type: 'UpdateCart'
+        payload: Cart
+      }
 }

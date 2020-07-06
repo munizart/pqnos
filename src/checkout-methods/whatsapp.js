@@ -7,5 +7,5 @@
 export function checkout (serializedCart, whatsappData) {
   return `https://api.whatsapp.com/send?phone=${encodeURIComponent(
     whatsappData.phone
-  )}&text=${encodeURIComponent(serializedCart)}&app_absent=true`
+  )}&text=${encodeURIComponent(serializedCart)}`
 }

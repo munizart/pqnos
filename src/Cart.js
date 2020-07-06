@@ -16,8 +16,7 @@ export default class Cart extends EventEmitter {
    */
   add (product, quantity) {
     const quantityInCart = this.addedProducts.get(product) || 0
-    this.addedProducts.set(product, quantity + quantityInCart)
-    this.emit('updated', this)
+    this.setQuantity(product, quantity + quantityInCart)
   }
 
   /**
@@ -28,13 +27,22 @@ export default class Cart extends EventEmitter {
     const quantityInCart = this.addedProducts.get(product)
     if (quantityInCart !== undefined) {
       const newQuantity = quantityInCart - quantity
-      if (newQuantity < 1) {
-        this.addedProducts.delete(product)
-      } else {
-        this.addedProducts.set(product, newQuantity)
-      }
-      this.emit('updated', this)
+      this.setQuantity(product, newQuantity)
     }
+  }
+
+  /**
+   *
+   * @param { Product } product
+   * @param { number } quantity
+   */
+  setQuantity (product, quantity) {
+    if (quantity < 1) {
+      this.addedProducts.delete(product)
+    } else {
+      this.addedProducts.set(product, quantity)
+    }
+    this.emit('updated', this)
   }
 
   get totalPrice () {
@@ -46,5 +54,9 @@ export default class Cart extends EventEmitter {
 
   get formatedTotal () {
     return formatCentsToBRLString(this.totalPrice)
+  }
+
+  get totalItems () {
+    return Array.from(this.addedProducts.values()).reduce((a, b) => a + b, 0)
   }
 }
